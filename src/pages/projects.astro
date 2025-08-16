@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Data untuk project-project Anda
+// Nanti Anda bisa ganti ini dengan data project asli
+const projects = [
+  {
+    title: 'Project Alpha',
+    description: 'A tool to automate daily tasks using Python and a simple web interface.',
+    stack: ['Python', 'Flask', 'JavaScript'],
+    link: 'https://github.com/g4mless/project-alpha'
+  },
+  {
+    title: 'Music Visualizer',
+    description: 'A web-based music visualizer built with Vue and Web Audio API.',
+    stack: ['Vue.js', 'Web Audio API', 'Vite'],
+    link: 'https://github.com/g4mless/music-visualizer'
+  },
+  {
+    title: 'Portfolio Website',
+    description: 'The very website you are looking at now, built with Astro.',
+    stack: ['Astro', 'TypeScript'],
+    link: 'https://github.com/g4mless/portfolio'
+  },
+  {
+    title: 'Discord Bot',
+    description: 'A multi-purpose bot for a private community server.',
+    stack: ['Kotlin', 'Kord'],
+    link: 'https://github.com/g4mless/discord-bot'
+  }
+];
+---
+
+<Layout title="Projects - g4mless">
+  <main>
+    <h1 class="title">My Projects</h1>
+    <div class="project-grid">
+      {projects.map(project => (
+        <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-card">
+          <article>
+            <h2 class="project-title">{project.title}</h2>
+            <p class="project-description">{project.description}</p>
+            <div class="project-stack">
+              {project.stack.map(tech => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+
+  /* Grid container */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .project-card {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 24px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    display: block;
+  }
+
+  .project-card:hover {
+    border-color: #FFFFFF;
+    transform: translateY(-5px);
+    text-decoration: none;
+  }
+
+  .project-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+
+  .project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  @media (min-width: 1200px) {
+    .title {
+      font-size: 40px;
+    }
+    .project-title {
+      font-size: 28px;
+    }
+    .project-description {
+      font-size: 18px;
+    }
+  }
+</style>
