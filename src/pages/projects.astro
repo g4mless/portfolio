@@ -5,28 +5,40 @@ import Layout from '../layouts/Layout.astro';
 // Nanti Anda bisa ganti ini dengan data project asli
 const projects = [
   {
-    title: 'Project Alpha',
-    description: 'A tool to automate daily tasks using Python and a simple web interface.',
-    stack: ['Python', 'Flask', 'JavaScript'],
-    link: 'https://github.com/g4mless/project-alpha'
+    title: 'Import',
+    description: 'Simple offline todo list app built using Jetpack Compose.',
+    stack: ['Kotlin', 'Jetpack Compose'],
+    link: 'https://github.com/g4mless/import'
   },
   {
-    title: 'Music Visualizer',
-    description: 'A web-based music visualizer built with Vue and Web Audio API.',
-    stack: ['Vue.js', 'Web Audio API', 'Vite'],
-    link: 'https://github.com/g4mless/music-visualizer'
+    title: 'KeqingStock',
+    description: 'Image gallery for my Keqing',
+    stack: ['Vue', 'Vite', 'Tailwindcss'],
+    link: 'https://github.com/g4mless/keqingstock'
   },
   {
-    title: 'Portfolio Website',
-    description: 'The very website you are looking at now, built with Astro.',
-    stack: ['Astro', 'TypeScript'],
-    link: 'https://github.com/g4mless/portfolio'
+    title: 'Imeji',
+    description: 'Lightweight image viewer inspired by qView.',
+    stack: ['Rust', 'egui'],
+    link: 'https://github.com/g4mless/imeji'
   },
   {
-    title: 'Discord Bot',
-    description: 'A multi-purpose bot for a private community server.',
-    stack: ['Kotlin', 'Kord'],
-    link: 'https://github.com/g4mless/discord-bot'
+    title: 'GachaBit',
+    description: 'Image gacha web using Safebooru for the pictures.',
+    stack: ['React', 'Vite', 'Tailwindcss'],
+    link: 'https://github.com/g4mless/gachabit'
+  },
+  {
+    title: 'MathScroll',
+    description: 'Doomscrolling but math problems.',
+    stack: ['Nuxt', 'Vite', 'Tailwindcss'],
+    link: 'https://github.com/g4mless/gachabit'
+  },
+  {
+    title: 'Update F*cker',
+    description: 'name quite literal. For disable/enable update easily.',
+    stack: ['Rust', 'egui'],
+    link: 'https://github.com/g4mless/updatefucker'
   }
 ];
 ---
@@ -69,9 +81,10 @@ const projects = [
 
   .project-card {
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 24px;
+    padding: 24px 24px 50px 24px;
     transition: border-color 0.3s ease, transform 0.3s ease;
     display: block;
+    position: relative;
   }
 
   .project-card:hover {
@@ -90,13 +103,17 @@ const projects = [
     font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 
   .project-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
   }
 
   .tech-tag {

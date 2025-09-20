@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Data for music platforms
+const musicPlatforms = [
+  {
+    title: 'Spotify',
+    link: 'https://open.spotify.com/artist/4McGLHzMO9obeoOuK6F0wD',
+    icon: '🎵'
+  },
+  {
+    title: 'SoundCloud',
+    link: 'https://soundcloud.com/g4mless',
+    icon: '☁️'
+  }
+];
+---
+
+<Layout title="Music - g4mless">
+  <main>
+    <h1 class="title">My Music</h1>
+    <p class="subtitle">
+      Too lazy for writing this section. Here you can listen my music.
+    </p>
+
+    <div class="music-grid">
+      {musicPlatforms.map(platform => (
+        <a href={platform.link} target="_blank" rel="noopener noreferrer" class="music-card">
+          <article>
+            <h2 class="platform-title">{platform.title}</h2>
+          </article>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  body {
+    align-items: flex-start !important;
+    padding-top: 8rem !important;
+  }
+
+  main {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  /* Grid container */
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .music-card {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 24px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    text-decoration: none;
+  }
+
+  .music-card:hover {
+    border-color: #FFFFFF;
+    transform: translateY(-5px);
+  }
+
+  .platform-title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: 1200px) {
+    .title {
+      font-size: 40px;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+    .platform-title {
+      font-size: 28px;
+    }
+    .platform-description {
+      font-size: 18px;
+    }
+  }
+</style>
