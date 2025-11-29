@@ -1,136 +1,148 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const projects = [
-  {
-    title: 'Import',
-    description: 'Simple offline todo list app built using Jetpack Compose.',
-    stack: ['Kotlin', 'Jetpack Compose'],
-    link: 'https://github.com/g4mless/import'
-  },
-  {
-    title: 'KeqingStock',
-    description: 'Image gallery for my Keqing',
-    stack: ['Vue', 'Vite', 'Tailwindcss'],
-    link: 'https://github.com/g4mless/keqingstock'
-  },
-  {
-    title: 'Imeji',
-    description: 'Lightweight image viewer inspired by qView.',
-    stack: ['Rust', 'egui'],
-    link: 'https://github.com/g4mless/imeji'
-  },
-  {
-    title: 'GachaBit',
-    description: 'Image gacha web using Safebooru for the pictures.',
-    stack: ['React', 'Vite', 'Tailwindcss'],
-    link: 'https://github.com/g4mless/gachabit'
-  },
-  {
-    title: 'MathScroll',
-    description: 'Doomscrolling but math problems.',
-    stack: ['Nuxt', 'Tailwindcss'],
-    link: 'https://github.com/g4mless/gachabit'
-  },
-  {
-    title: 'NoUpdater',
-    description: 'name quite literal. For disable/enable update easily on windows.',
-    stack: ['Rust', 'egui'],
-    link: 'https://github.com/g4mless/noupdater'
-  }
+    {
+        title: "KeqingStock",
+        description: "Image gallery for my Keqing",
+        stack: ["Vue", "Tailwindcss"],
+        link: "https://github.com/g4mless/keqingstock",
+    },
+    {
+        title: "Imeji",
+        description: "Lightweight image viewer inspired by qView.",
+        stack: ["Rust", "egui"],
+        link: "https://github.com/g4mless/imeji",
+    },
+    {
+        title: "GachaBit",
+        description: "Image gacha web using Safebooru for the pictures.",
+        stack: ["React", "Tailwindcss"],
+        link: "https://github.com/g4mless/gachabit",
+    },
+    {
+        title: "MathScroll",
+        description: "Doomscrolling but math problems.",
+        stack: ["Nuxt", "Tailwindcss"],
+        link: "https://github.com/g4mless/gachabit",
+    },
+    {
+        title: "NoUpdater",
+        description:
+            "name quite literal. For disable/enable update easily on windows.",
+        stack: ["Rust", "egui"],
+        link: "https://github.com/g4mless/noupdater",
+    },
+    {
+        title: "Nhentai Viewer",
+        description:
+            "Small web app to view cover art & tags from gallery code.",
+        stack: ["ElysiaJS", "Tailwindcss"],
+        link: "https://github.com/g4mless/nhv",
+    },
 ];
 ---
 
 <Layout title="Projects - g4mless">
-  <main>
-    <h1 class="title">My Projects</h1>
-    <div class="project-grid">
-      {projects.map(project => (
-        <a href={project.link} target="_blank" rel="noopener noreferrer" class="project-card">
-          <article>
-            <h2 class="project-title">{project.title}</h2>
-            <p class="project-description">{project.description}</p>
-            <div class="project-stack">
-              {project.stack.map(tech => (
-                <span class="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </article>
-        </a>
-      ))}
-    </div>
-  </main>
+    <main>
+        <h1 class="title">My Projects</h1>
+        <div class="project-grid">
+            {
+                projects.map((project) => (
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-card"
+                    >
+                        <article>
+                            <h2 class="project-title">{project.title}</h2>
+                            <p class="project-description">
+                                {project.description}
+                            </p>
+                            <div class="project-stack">
+                                {project.stack.map((tech) => (
+                                    <span class="tech-tag">{tech}</span>
+                                ))}
+                            </div>
+                        </article>
+                    </a>
+                ))
+            }
+        </div>
+    </main>
 </Layout>
 
 <style>
-  main {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 2rem;
-  }
-
-
-  /* Grid container */
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-  }
-
-  .project-card {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 24px 24px 45px 24px;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-    display: block;
-    position: relative;
-  }
-
-  .project-card:hover {
-    border-color: #FFFFFF;
-    transform: translateY(-5px);
-    text-decoration: none;
-  }
-
-  .project-title {
-    font-size: 24px;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin-bottom: 4px !important;
-  }
-
-  .project-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 8px;
-  }
-
-  .project-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-  }
-
-  .tech-tag {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-  }
-
-  @media (min-width: 1200px) {
-    .title {
-      font-size: 40px;
+    main {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 2rem;
     }
+
+    /* Grid container */
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+    }
+
+    .project-card {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 24px 24px 45px 24px;
+        transition:
+            border-color 0.3s ease,
+            transform 0.3s ease;
+        display: block;
+        position: relative;
+    }
+
+    .project-card:hover {
+        border-color: #ffffff;
+        transform: translateY(-5px);
+        text-decoration: none;
+    }
+
     .project-title {
-      font-size: 28px;
+        font-size: 24px;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 4px !important;
     }
+
     .project-description {
-      font-size: 18px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 8px;
     }
-  }
+
+    .project-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        right: 24px;
+    }
+
+    .tech-tag {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 4px;
+    }
+
+    @media (min-width: 1200px) {
+        .title {
+            font-size: 40px;
+        }
+        .project-title {
+            font-size: 28px;
+        }
+        .project-description {
+            font-size: 18px;
+        }
+    }
 </style>
