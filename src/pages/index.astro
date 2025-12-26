@@ -57,33 +57,43 @@ import Layout from '../layouts/Layout.astro';
 	.avatar {
 		width: 100px;
 		height: 100px;
-		margin-bottom: 2px;
+		margin-bottom: 1rem;
+        border: 3px solid #FFFFFF;
+        box-shadow: 6px 6px 0px #FFFFFF;
 	}
 
 	.name {
 		font-size: 32px;
-		font-weight: 400;
+		font-weight: 800;
 		margin: 0 0 4px 0;
+        letter-spacing: -1px;
 	}
 
 	.intro {
 		line-height: 1.6;
 		margin-bottom: 60px;
+        font-weight: 400;
 	}
 
 	section {
 		margin-bottom: 48px;
+        border-left: 3px solid #FFFFFF;
+        padding-left: 1.5rem;
 	}
 
 	h2 {
-		font-size: 32px;
-		font-weight: 400;
-		margin: 0 0 2px 0;
+		font-size: 28px;
+		font-weight: 800;
+		margin: 0 0 1rem 0;
+        background: #FFFFFF;
+        color: #00296B;
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
 	}
 
 	p {
         font-size: 16px;
-		margin: 0 0 1px 0;
+		margin: 0 0 0.5rem 0;
 		line-height: 1.6;
 	}
 
@@ -94,12 +104,18 @@ import Layout from '../layouts/Layout.astro';
     .outro {
         margin-top: 48px;
         margin-bottom: 0;
+        border-top: 3px solid #FFFFFF;
+        padding-top: 1rem;
+        font-weight: 700;
     }
 
 	@media (min-width: 1200px) {
-		.name, h2 {
-			font-size: 36px;
+		.name {
+			font-size: 48px;
 		}
+        h2 {
+            font-size: 32px;
+        }
 
 		p {
 			font-size: 20px;
@@ -114,9 +130,12 @@ import Layout from '../layouts/Layout.astro';
 		main {
 			max-width: 900px;
 		}
-		.name, h2 {
-			font-size: 40px;
+		.name {
+			font-size: 64px;
 		}
+        h2 {
+            font-size: 36px;
+        }
 
 		.intro {
 			margin-bottom: 80px;
@@ -127,7 +146,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		section {
-			margin-bottom:60px:
+			margin-bottom:60px;
 		}
 
 		.avatar {

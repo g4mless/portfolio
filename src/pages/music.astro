@@ -46,7 +46,6 @@ const musicPlatforms = [
 <style>
     body {
         align-items: flex-start !important;
-        padding-top: 8rem !important;
     }
 
     main {
@@ -59,43 +58,49 @@ const musicPlatforms = [
     .music-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 24px;
+        gap: 32px;
+        margin-top: 2rem;
     }
 
     .music-card {
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 3px solid #FFFFFF;
         padding: 24px;
-        transition:
-            border-color 0.3s ease,
-            transform 0.3s ease;
+        transition: all 0.2s ease-in-out;
         display: block;
         text-decoration: none;
+        background: #00296B;
+        box-shadow: 6px 6px 0px #FFFFFF;
     }
 
     .music-card:hover {
-        border-color: #ffffff;
-        transform: translateY(-5px);
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0px #FFFFFF;
+    }
+    
+    .music-card:active {
+        transform: translate(2px, 2px);
+        box-shadow: 4px 4px 0px #FFFFFF;
     }
 
     .platform-title {
         font-size: 24px;
-        font-weight: 400;
+        font-weight: 800;
         color: #ffffff;
-        margin-bottom: 12px;
+        margin-bottom: 0;
     }
 
     @media (min-width: 1200px) {
         .title {
-            font-size: 40px;
+            font-size: 48px;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
         }
         .subtitle {
             font-size: 20px;
         }
         .platform-title {
             font-size: 28px;
-        }
-        .platform-description {
-            font-size: 18px;
         }
     }
 </style>
